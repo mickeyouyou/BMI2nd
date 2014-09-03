@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BMI2nd</string>
+    <string name="height">身高（cm）</string>
+    <string name="weight">体重（kg）</string>
+    <string name="action_settings">退出</string>
+    <string name="action_quit">退出</string>
+    <string name="label_homepage">首页</string>
+    <string name="btn_submit">计算BMI</string>
+    <string name="your_bmi">你的BMI值为：</string>
+    <string name="suggestion_light">体重过轻，你该多吃点了</string>
+    <string name="suggestion_good">体型超棒哦</string>
+    <string name="suggestion_heavy1">过重，你该节食了</string>
+    <string name="suggestion_heavy2">轻度肥胖，你该节食了</string>
+    <string name="suggestion_heavy3">中度肥胖，你该节食了</string>
+    <string name="suggestion_heavy4">重度肥胖，你该节食了</string>
+
+
+    <string name="about_title">ABOUT BMI</string>
+    <string name="about_content">Android Bmi calc</string>
+    <string name="about_button_ok">确定</string>
+    
+    <string name="error_input_tips">输错了吗？只能输入数字哟</string>
+
+</resources>
