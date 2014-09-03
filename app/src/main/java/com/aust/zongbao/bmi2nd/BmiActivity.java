@@ -104,7 +104,7 @@ public class BmiActivity extends Activity {
                             public void onClick(
                                     DialogInterface dialogInterface, int i) {
                                 // go to url
-                                Uri uri = Uri.parse("tel:18055437936");
+                                Uri uri = Uri.parse("http://www.baidu.com");
                                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                                 startActivity(intent);
                             }
