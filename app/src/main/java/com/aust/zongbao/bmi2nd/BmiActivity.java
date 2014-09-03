@@ -2,6 +2,9 @@ package com.aust.zongbao.bmi2nd;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -76,6 +79,7 @@ public class BmiActivity extends Activity {
                }else if(BMI>=30 & BMI<35){
                    suggestion.setText(R.string.suggestion_heavy3);
                }else{
+                   showNotification(BMI);
                    suggestion.setText(R.string.suggestion_heavy4);
                }
 
@@ -111,6 +115,34 @@ public class BmiActivity extends Activity {
                         }
                 )
                 .show();
+
+    }
+
+    //notification of tips when eating
+    public void showNotification(double BMI)
+    {
+        NotificationManager barManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        Notification barMessage = new Notification(
+                R.drawable.quit,
+                "你需要注意节食哦",
+                System.currentTimeMillis()
+        );
+
+        PendingIntent contentIntent = PendingIntent.getActivity(
+                this,
+                0,
+                new Intent(this,BmiActivity.class),
+                PendingIntent.FLAG_UPDATE_CURRENT
+        );
+
+        barMessage.setLatestEventInfo(
+                BmiActivity.this,
+                "your BMI value is too high ",
+                "通知监督人",
+                contentIntent
+        );
+
+        barManager.notify(0,barMessage);
 
     }
 
