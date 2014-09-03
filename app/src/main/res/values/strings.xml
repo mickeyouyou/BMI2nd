@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">BMI2nd</string>
+    <string name="app_name">BMI体质指数</string>
     <string name="height">身高（cm）</string>
     <string name="weight">体重（kg）</string>
     <string name="action_settings">退出</string>
@@ -18,7 +18,7 @@
 
 
     <string name="about_title">ABOUT BMI</string>
-    <string name="about_content">Android Bmi calc</string>
+    <string name="about_content">Android Bmi calcalator 身体质量指数 (Body Mass Index, 简称BMI), 亦称克托莱指数, 是目前国际上常用的衡量人体胖瘦程度以及是否健康的一个标准</string>
     <string name="about_button_ok">确定</string>
     
     <string name="error_input_tips">输错了吗？只能输入数字哟</string>
