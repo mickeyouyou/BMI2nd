@@ -6,7 +6,7 @@
     <string name="weight">体重（kg）</string>
     <string name="action_settings">退出</string>
     <string name="action_quit">退出</string>
-    <string name="label_homepage">首页</string>
+    <string name="label_homepage">项目首页</string>
     <string name="btn_submit">计算BMI</string>
     <string name="your_bmi">你的BMI值为：</string>
     <string name="suggestion_light">体重过轻，你该多吃点了</string>

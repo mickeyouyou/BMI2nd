@@ -6,6 +6,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,12 +26,16 @@ import android.widget.Toast;
 
 public class BmiActivity extends Activity {
 
+    public static final String PREF ="BMI_PREF";
+    public static final String PREF_HEIGHT = "BMI_Height";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
         find_view();
         setlistener();
+        restorePrefs();
     }
 
     //define and find elment by id  that could save some time
@@ -108,7 +113,7 @@ public class BmiActivity extends Activity {
                             public void onClick(
                                     DialogInterface dialogInterface, int i) {
                                 // go to url
-                                Uri uri = Uri.parse("http://www.baidu.com");
+                                Uri uri = Uri.parse("https://github.com/mickeyouyou/BMI2nd");
                                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                                 startActivity(intent);
                             }
@@ -116,6 +121,27 @@ public class BmiActivity extends Activity {
                 )
                 .show();
 
+    }
+
+    private void restorePrefs()
+    {
+        SharedPreferences settings = getSharedPreferences(PREF,0);
+        String pref_height = settings.getString(PREF_HEIGHT,"");
+        if(!"".equals(pref_height)){
+        field_height.setText(pref_height);
+        field_weight.requestFocus();
+    }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        //save user preferences . use Editor object to make changes.
+        SharedPreferences settings = getSharedPreferences(PREF,0);
+        settings.edit()
+                .putString(PREF_HEIGHT, field_height.getText().toString())
+                .commit();
     }
 
     //notification of tips when eating
