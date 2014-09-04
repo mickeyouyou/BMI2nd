@@ -8,7 +8,9 @@ import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +31,8 @@ public class BmiActivity extends Activity {
     public static final String PREF ="BMI_PREF";
     public static final String PREF_HEIGHT = "BMI_Height";
 
+    private static final String TAG = "bmi";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +40,8 @@ public class BmiActivity extends Activity {
         find_view();
         setlistener();
         restorePrefs();
+        Log.v(TAG,"start  on create~~~");
+
     }
 
     //define and find elment by id  that could save some time
@@ -44,6 +50,7 @@ public class BmiActivity extends Activity {
     private Button button_submit;
     private TextView result;
     private TextView suggestion;
+
 
 
     public void find_view()
@@ -134,6 +141,36 @@ public class BmiActivity extends Activity {
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        Log.v(TAG,"start onStop~~~");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.v(TAG,"start onDestroy~~~");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.v(TAG,"start onResume~~~");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.v(TAG,"start onRestart~~~");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.v(TAG,"start Start~~~");
+    }
+
+    @Override
     protected void onPause() {
         super.onPause();
 
@@ -142,6 +179,8 @@ public class BmiActivity extends Activity {
         settings.edit()
                 .putString(PREF_HEIGHT, field_height.getText().toString())
                 .commit();
+
+        Log.v(TAG,"start Pause~~~");
     }
 
     //notification of tips when eating
