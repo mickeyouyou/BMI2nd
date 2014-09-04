@@ -31,7 +31,7 @@ public class BmiActivity extends Activity {
     public static final String PREF ="BMI_PREF";
     public static final String PREF_HEIGHT = "BMI_Height";
 
-    private static final String TAG = "bmi";
+//    private static final String TAG = "bmi";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class BmiActivity extends Activity {
         find_view();
         setlistener();
         restorePrefs();
-        Log.v(TAG,"start  on create~~~");
+//        Log.v(TAG,"start  on create~~~");
 
     }
 
@@ -140,35 +140,6 @@ public class BmiActivity extends Activity {
     }
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.v(TAG,"start onStop~~~");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.v(TAG,"start onDestroy~~~");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.v(TAG,"start onResume~~~");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.v(TAG,"start onRestart~~~");
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.v(TAG,"start Start~~~");
-    }
 
     @Override
     protected void onPause() {
@@ -180,7 +151,7 @@ public class BmiActivity extends Activity {
                 .putString(PREF_HEIGHT, field_height.getText().toString())
                 .commit();
 
-        Log.v(TAG,"start Pause~~~");
+//        Log.v(TAG,"start Pause~~~");
     }
 
     //notification of tips when eating
