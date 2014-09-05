@@ -7,6 +7,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.net.Uri;
 import android.nfc.Tag;
 import android.os.Bundle;
@@ -16,14 +17,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.textservice.SuggestionsInfo;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
 
 import android.content.DialogInterface;
 import android.widget.Toast;
+import com.aust.zongbao.bmi2nd.DbAdapter;
 
 
 public class BmiActivity extends Activity {
@@ -204,5 +208,19 @@ public class BmiActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    private DbAdapter mDbHelper;
+    private Cursor mCursor;
+
+    private void setAdapter() {
+        mDbHelper = new DbAdapter(this);
+        mDbHelper.open();
+
+        ListAdapter adapter =new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,
+                note_array);
+        setListAdapter(adapter);
     }
 }
