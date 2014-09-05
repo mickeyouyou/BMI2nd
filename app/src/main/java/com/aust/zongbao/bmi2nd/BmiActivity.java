@@ -21,6 +21,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -44,7 +45,8 @@ public class BmiActivity extends Activity {
         find_view();
         setlistener();
         restorePrefs();
-//        Log.v(TAG,"start  on create~~~");
+
+
 
     }
 
@@ -216,11 +218,31 @@ public class BmiActivity extends Activity {
 
     private void setAdapter() {
         mDbHelper = new DbAdapter(this);
-        mDbHelper.open();
+//        mDbHelper.open();
 
-        ListAdapter adapter =new ArrayAdapter<String>(this,
+        /*ListAdapter adapter =new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,
                 note_array);
-        setListAdapter(adapter);
+        setListAdapter(adapter);*/
+
+
+    }
+
+    private void fillData () {
+        mCursor = mDbHelper.getall();
+        startManagingCursor(mCursor);
+
+
+        //create an array to specify the fields we want to display in the list
+
+        String[] from = new String[]{DbAdapter.KEY_BMI};
+
+        //an array of fields we want to bind those fields to
+        /*int[] to = new int[] {android.R.id.text1};
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
+                android.R.id.simple_list_item_1,
+                mCursor,from,to);
+        setListAdapter(adapter);*/
+
     }
 }
