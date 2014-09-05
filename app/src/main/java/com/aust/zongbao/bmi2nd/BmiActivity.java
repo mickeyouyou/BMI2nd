@@ -45,9 +45,6 @@ public class BmiActivity extends Activity {
         find_view();
         setlistener();
         restorePrefs();
-
-
-
     }
 
     //define and find elment by id  that could save some time
@@ -56,8 +53,6 @@ public class BmiActivity extends Activity {
     private Button button_submit;
     private TextView result;
     private TextView suggestion;
-
-
 
     public void find_view()
     {
@@ -157,7 +152,6 @@ public class BmiActivity extends Activity {
                 .putString(PREF_HEIGHT, field_height.getText().toString())
                 .commit();
 
-//        Log.v(TAG,"start Pause~~~");
     }
 
     //notification of tips when eating
