@@ -2,7 +2,6 @@ package com.aust.zongbao.bmi2nd;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -20,9 +19,6 @@ public class DbAdapter {
 
     private static final String DATABASE_CREATE =
             "CREATE TABLE bmidata (id INTEGER PRIMARY KEY AUTOINCREMENT,bmi FLOAT(4,2), weight FLOAT(5,2),time DATATIME);";
-
-
-
 
     private static class DatabaseHelper extends SQLiteOpenHelper{
 
@@ -44,7 +40,6 @@ public class DbAdapter {
 
 
     }
-
 
 
     private Context mCtx = null;
