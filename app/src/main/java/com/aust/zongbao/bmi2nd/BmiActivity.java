@@ -174,7 +174,7 @@ public class BmiActivity extends Activity {
         barMessage.setLatestEventInfo(
                 BmiActivity.this,
                 "your BMI value is too high ",
-                "通知监督人",
+                "BMI体质指数通知",
                 contentIntent
         );
 
