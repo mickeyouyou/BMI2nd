@@ -218,15 +218,11 @@ public class BmiActivity extends Activity {
                 android.R.layout.simple_list_item_1,
                 note_array);
         setListAdapter(adapter);*/
-
-
     }
 
     private void fillData () {
         mCursor = mDbHelper.getall();
         startManagingCursor(mCursor);
-
-
         //create an array to specify the fields we want to display in the list
 
         String[] from = new String[]{DbAdapter.KEY_BMI};
