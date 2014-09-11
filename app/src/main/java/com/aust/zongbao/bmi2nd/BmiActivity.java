@@ -206,18 +206,17 @@ public class BmiActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    private DbAdapter mDbHelper;
+ /*   private DbAdapter mDbHelper;
     private Cursor mCursor;
 
     private void setAdapter() {
         mDbHelper = new DbAdapter(this);
 //        mDbHelper.open();
 
-        /*ListAdapter adapter =new ArrayAdapter<String>(this,
+        *//*ListAdapter adapter =new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1,
                 note_array);
-        setListAdapter(adapter);*/
+        setListAdapter(adapter);*//*
     }
 
     private void fillData () {
@@ -228,11 +227,11 @@ public class BmiActivity extends Activity {
         String[] from = new String[]{DbAdapter.KEY_BMI};
 
         //an array of fields we want to bind those fields to
-        /*int[] to = new int[] {android.R.id.text1};
+        *//*int[] to = new int[] {android.R.id.text1};
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
                 android.R.id.simple_list_item_1,
                 mCursor,from,to);
-        setListAdapter(adapter);*/
+        setListAdapter(adapter);*//*
 
-    }
+    }*/
 }
